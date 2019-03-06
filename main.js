@@ -4,12 +4,15 @@
 const dinosaurs = [
     {
         dinoType: 't-rex',
+        name: 'Billy',
     },
     {
         dinoType: 'brontasaurus',
+        name: 'Fred',
     },
     {
         dinoType: 'velociraptor',
+        name: 'Amy',
     }
 ];
 
@@ -25,7 +28,10 @@ const printToDom = (divId, textToPrint) => {
 const buildDinosaurs = () => {
     let domString = '';
     for(let i = 0; i < dinosaurs.length; i++) {
+        domString+=`<div class="dinosaur">`
         domString += `<h3>${dinosaurs[i].dinoType}</h3>`;
+        domString += `<p>${dinosaurs[i].name}</p>`
+        domString += `</div>`
 
     }
     printToDom('dino-barn', domString);
